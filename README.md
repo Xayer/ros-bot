@@ -42,6 +42,8 @@ My adventure of ROS starts here.
 
 ## General
 - after building your package, before you can run it, remember to `source ~/.bashrc`.
+- you might want to make an alias to this command, as you will use it alot:
+    `colcon build --packages-select {package_name} && source ~/.bashrc && ros2 run {package_name} {node_name}`
 
 ## Python specific
 - When creating your package, remember to include your node inside `entry_node` and `console_scripts`. eg:
