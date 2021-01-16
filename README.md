@@ -35,3 +35,21 @@ My adventure of ROS starts here.
     `colcon build --packages-select my_py_pkg` build only selected packages
 - `ros2 pkg create my_py_pkg --build-type ament_python --dependencies rclpy` create new **python** ros package for 
 - `ros2 pkg create my_cpp_pkg --build-type ament_cmake --dependencies rclcpp` create new **C++** ros package
+- Start node `ros2 run my_py_pkg py_node`
+
+# Things to remember
+
+## General
+- after building your package, before you can run it, remember to `source ~/.bashrc`.
+
+## Python specific
+- When creating your package, remember to include your node inside `entry_node` and `console_scripts`. eg:
+    ```python
+        # ...
+        tests_require=['pytest'],
+        entry_points={
+            'console_scripts': [
+                "py_node = my_py_pkg.my_first_node:main"
+            ],
+        },
+    ```
