@@ -36,6 +36,7 @@ My adventure of ROS starts here.
 - `ros2 pkg create my_py_pkg --build-type ament_python --dependencies rclpy` create new **python** ros package for 
 - `ros2 pkg create my_cpp_pkg --build-type ament_cmake --dependencies rclcpp` create new **C++** ros package
 - Start node `ros2 run my_py_pkg py_node`
+- in case you want to run a file from the `install` directory, make sure you have permissions to run it, but running `chmod +x NODE_NAME_HERE`
 
 # Things to remember
 
