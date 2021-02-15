@@ -32,17 +32,24 @@ My adventure of ROS starts here.
 
 # Commands
 - `colcon build` - to build all packages in the workspace.
-    `colcon build --packages-select my_py_pkg` build only selected packages
+- `colcon build --packages-select <package> --symlink-install` build only selected packages. `--symlink-install` will make a symlink to the package directly, instead of the compiled executeable.
 - `ros2 pkg create my_py_pkg --build-type ament_python --dependencies rclpy` create new **python** ros package for 
 - `ros2 pkg create my_cpp_pkg --build-type ament_cmake --dependencies rclcpp` create new **C++** ros package
 - Start node `ros2 run my_py_pkg py_node`
 - in case you want to run a file from the `install` directory, make sure you have permissions to run it, but running `chmod +x NODE_NAME_HERE`
 - Start **ROS2-Web-Bridge** `cd ~/ros2_ws/ros2-web-bridge && npm run wsserver`.
+- `ros2 node list` - list a curently running nodes
+- `ros2 node info <node>` - list information regarding the selected node.
+- `ros2 run <package> <node> --ros-args -r __node:=<new name>` Run a node with a different name. This is useful because all nodes must have unique names.
+- `RQT` - will launch a ROS GUI with a collection of plugins.
+    - `Plugins > Introspection > Node Graph` draggable UI to see all nodes.
+    - Change `Nodes only` to `Nodes/Topic (all)` and uncheck dead sinks, to see all topics running too.
 
 # Things to remember
 
 ## General
 - after building your package, before you can run it, remember to `source ~/.bashrc`.
+- in order for `--symlink-install` to work, the file needs to be an executable, so run `chmod +x NODE_NAME_HERE` to make sure it is. 
 - you might want to make an alias to this command, as you will use it alot:
     `colcon build --packages-select {package_name} && source ~/.bashrc && ros2 run {package_name} {node_name}`
 
