@@ -44,6 +44,7 @@ My adventure of ROS starts here.
 - `RQT` - will launch a ROS GUI with a collection of plugins.
     - `Plugins > Introspection > Node Graph` draggable UI to see all nodes.
     - Change `Nodes only` to `Nodes/Topic (all)` and uncheck dead sinks, to see all topics running too.
+- `ros2 interface show example_interfaces/msg/String` - view what is inside an interface.
 
 # Things to remember
 
