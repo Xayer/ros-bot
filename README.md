@@ -53,6 +53,7 @@ My adventure of ROS starts here.
 - in order for `--symlink-install` to work, the file needs to be an executable, so run `chmod +x NODE_NAME_HERE` to make sure it is. 
 - you might want to make an alias to this command, as you will use it alot:
     `colcon build --packages-select {package_name} && source ~/.bashrc && ros2 run {package_name} {node_name}`
+- when building, make sure you're in the ros2_ws directory, and not in the root.
 
 ## Python specific
 - When creating your package, remember to include your node inside `entry_node` and `console_scripts`. eg:
