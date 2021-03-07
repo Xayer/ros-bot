@@ -45,6 +45,9 @@ My adventure of ROS starts here.
     - `Plugins > Introspection > Node Graph` draggable UI to see all nodes.
     - Change `Nodes only` to `Nodes/Topic (all)` and uncheck dead sinks, to see all topics running too.
 - `ros2 interface show example_interfaces/msg/String` - view what is inside an interface.
+- run News station test with publisher in cpp, and subscriber in python
+    - `ros2 run my_cpp_pkg robot_news_station`
+    - `ros2 run my_py_pkg smartphone`
 
 # Things to remember
 
