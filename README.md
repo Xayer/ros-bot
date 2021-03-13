@@ -41,13 +41,33 @@ My adventure of ROS starts here.
 - `ros2 node list` - list a curently running nodes
 - `ros2 node info <node>` - list information regarding the selected node.
 - `ros2 run <package> <node> --ros-args -r __node:=<new name>` Run a node with a different name. This is useful because all nodes must have unique names.
-- `RQT` - will launch a ROS GUI with a collection of plugins.
+- `RQT` (called by writing `rqt` or `rqt_graph` in terminal) - will launch a ROS GUI with a collection of plugins.
     - `Plugins > Introspection > Node Graph` draggable UI to see all nodes.
     - Change `Nodes only` to `Nodes/Topic (all)` and uncheck dead sinks, to see all topics running too.
 - `ros2 interface show example_interfaces/msg/String` - view what is inside an interface.
 - run News station test with publisher in cpp, and subscriber in python
-    - `ros2 run my_cpp_pkg robot_news_station`
+    - `ros2 run my_py_pkg robot_news_station`
     - `ros2 run my_py_pkg smartphone`
+    - `ros2 run my_cpp_pkg robot_news_station`
+    - `ros2 run my_cpp_pkg smartphone`
+- Show interface types using the `interfaces` commands;
+    - `ros2 interface show example_interfaces/msg/String`
+- get Average HZ frequency of a topic
+    - `ros2 topic hz /robot_news`
+- get bandwidth of a topic
+    - `ros2 topic bw /robot_news`
+- Publish to topic from terminal;
+    - `ros2 topic pub -r 10 /robot_news example_interfaces/msg/String "{data: 'hi' }"`
+- Remap topic at runtime:
+    - `ros2 run my_cpp_pkg robot_news_station --ros-args -r __node:=my_station -r robot_news:=my_news`
+        - `-r __node:=my_station` - Node name
+        - `-r robot_news:=my_news` - will replace any strings in the code. In this case, this is the name of our topic.
+
+# Turtlesim
+- Runnig turtlesim
+    - `ros2 run turtlesim turtlesim_node` - the visual turtle
+    - `ros2 run turtlesim turtle_teleop_key` - turtle controller
+    - `ros2 interface show geometry_msgs/msg/Twist` - the topic message type that controls the turtle
 
 # Things to remember
 
