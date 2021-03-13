@@ -69,6 +69,14 @@ My adventure of ROS starts here.
     - `ros2 run turtlesim turtle_teleop_key` - turtle controller
     - `ros2 interface show geometry_msgs/msg/Twist` - the topic message type that controls the turtle
 
+# Number Counter Examples
+    - number_publisher - a node that publishes a number (always 1.)
+    - number_counter - a node that subscribes to `number_publisher` and adds 1 to it, every time it recieves something from it. It will then publish the added value
+
+## How to run Number Counter Example
+- `ros2 run my_cpp_pkg number_publisher`
+- `ros2 run my_cpp_pkg number_counter`
+
 # Things to remember
 
 ## General
