@@ -76,6 +76,7 @@ My adventure of ROS starts here.
 ## How to run Number Counter Example
 - `ros2 run my_cpp_pkg number_publisher`
 - `ros2 run my_cpp_pkg number_counter`
+- You can inspect them in `rqt_graph`
 
 # Things to remember
 

@@ -4,7 +4,7 @@
 class NumberCounterNode : public rclcpp::Node
 {
 public:
-    NumberCounterNode() : Node("number_publisher")
+    NumberCounterNode() : Node("number_counter")
     {
         publisher_ = this->create_publisher<example_interfaces::msg::Int64>("number_count", 10);
         subscriber_ = this->create_subscription<example_interfaces::msg::Int64>("number", 10,
